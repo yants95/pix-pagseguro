@@ -5,9 +5,9 @@ export class PixController {
     this.pixService = new PixService()
   }
 
-  async handle (req, res) {
+  async handle (_, res) {
     try {
-      const receivedPix = await this.pixService.getReceivedPix(req.query)
+      const receivedPix = await this.pixService.getReceivedPix()
       res.status(200).json(receivedPix)
     } catch (error) {
       res.status(500).json(error)

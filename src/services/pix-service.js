@@ -5,7 +5,7 @@ export class PixService {
     this.pagSeguroAPI = new PagSeguroAPI()
   }
 
-  async getReceivedPix(params) {
-    return await this.pagSeguroAPI.getReceivedPix(params)
+  async getReceivedPix() {
+    return await this.pagSeguroAPI.getReceivedPix()
   }
 }
