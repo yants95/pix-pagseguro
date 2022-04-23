@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 import axios from 'axios'
 
 import { env } from '../config/env.js'
-import { generateDate } from '../utils/date.js'
+import { generateDateByDays } from '../utils/date.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename);
@@ -30,10 +30,24 @@ export class PagSeguroAPI {
   async getReceivedPix() {
     const { data } = await this.pagSeguroBaseURL.get('/instant-payments/pix', {
       params: {
-        inicio: generateDate(-1),
-        fim: generateDate(+1)
+        inicio: generateDateByDays(-1),
+        fim: generateDateByDays(+1)
       },
     })
+    data.pix = [
+      {
+        "endToEndId": "727f79e2dfbe410ab4356be6a49b3e53",
+        "txid": "TesteTxId1234567891011121314151785",
+        "valor": "1530.23",
+        "horario": "2021-03-23T17:02:51Z"
+      },
+      {
+        "endToEndId": "0a24552183c849cb8a073b6ae637b309",
+        "txid": "TesteTxId1234567891011121314157894",
+        "valor": "1.05",
+        "horario": "2021-03-23T19:52:14Z"
+      }
+    ]
     return data
   }
 }
