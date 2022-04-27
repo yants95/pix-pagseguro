@@ -9,5 +9,6 @@ const pixController = new PixController()
 
 app.use(cors())
 app.use(json())
-router.get('/received-pix', (req, res) => pixController.handle(req, res))
+router.get('/received-pix', (req, res) => pixController.getReceivedPix(req, res))
+router.get('/generate-token', (req, res) => pixController.generateToken(req, res))
 app.use(router)
