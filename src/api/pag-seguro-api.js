@@ -51,4 +51,16 @@ export class PagSeguroAPI {
     ]
     return data
   }
+
+  async generateToken() {
+    const { data } = await this.pagSeguroBaseURL.post('/pix/oauth2', {
+      grant_type: env.grantType,
+      scope: env.scope
+    }, {
+      headers: {
+        Authorization: `Basic ${env.basicAuthAccessToken}`
+      }
+    })
+    return data
+  }
 }

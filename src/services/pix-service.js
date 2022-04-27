@@ -8,4 +8,8 @@ export class PixService {
   async getReceivedPix() {
     return await this.pagSeguroAPI.getReceivedPix()
   }
+
+  async generateToken() {
+    return await this.pagSeguroAPI.generateToken()
+  }
 }
