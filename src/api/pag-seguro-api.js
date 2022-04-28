@@ -35,20 +35,6 @@ export class PagSeguroAPI {
         fim: endDate
       },
     })
-    data.pix = [
-      {
-        "endToEndId": "727f79e2dfbe410ab4356be6a49b3e53",
-        "txid": "TesteTxId1234567891011121314151785",
-        "valor": "1530.23",
-        "horario": "2021-03-23T17:02:51Z"
-      },
-      {
-        "endToEndId": "0a24552183c849cb8a073b6ae637b309",
-        "txid": "TesteTxId1234567891011121314157894",
-        "valor": "1.05",
-        "horario": "2021-03-23T19:52:14Z"
-      }
-    ]
     return data
   }
 
